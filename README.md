@@ -28,7 +28,7 @@ corresponding codes since we also use the open sources of t-SNE and various conv
 ##### How to Run
 ```
 1. Setting the path of the model codes in main.ipynb.
-   (i.e., The location of the two model codes "layers.py" and "model.py", constructing the intenal layers of the CAE model and composing the structure of the CAE, respectively, can be set as "models" in main.ipynb)
+   (i.e., The location of the two model codes "/models/layers.py" and "/models/model.py", constructing the intenal layers of the CAE model and composing the structure of the CAE, respectively, can be set as "models" in main.ipynb)
 2. python main.ipynb -- After you finish the first step, you can execute main.ipynb and get latent variables and the related visualization (see the below example result).
 ``` 
 
@@ -48,4 +48,4 @@ the input size dimensions (ie, 8×12 → 15) by learning the vital latent repres
 
 ![](./image/CAE_result_example.jpg)
 
-Should you have any questions or comments, please contact us at the following email address below: shaun.park@kaist.ac.kr
+Should you have any questions or comments, please contact us at the following email address: shaun.park@kaist.ac.kr
