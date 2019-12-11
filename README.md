@@ -38,7 +38,7 @@ By runnung the code, we can convert the consecutive daily data into a image; one
 ![](./image/preprocessing.jpg)
 
 #### Step 3: Learning Representations With Reducing Dimensions via Convolutional Autoencoder
-By runnning the code, it is possible to extract the latent variables of the CAE as presented at the dataset "Saved_latent.csv." The interal structure of th CAE is as follows.
+By runnning the code, it is possible to extract the latent variables of the CAE as presented at the dataset "Saved_latent.csv." The interal structure of the CAE is as follows. Based on our learning, the optimal number of latent variables has been found as 15.
 
 ![](./image/CAE_structure.jpg)
 
