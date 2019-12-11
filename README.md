@@ -3,7 +3,7 @@ Implementation details including codes in Tensorflow and datasets from wearable 
 
 
 ### Data
-You can find two datasets in the sub-directory named "data". One is for providing the raw data retrieved from the Fitbit Charge 2 device ("Data.csv"). Each row represents daily abstraced values of features for each subject. There are total of 42 subjects; all subjects are anonymized and userIds are randomly assigned for each subject. The features included in the dataset are as follows. One remark is that for the rows related to the naps, the sleep-related daily abstract features were assigned as "-1", since those features are calculted soley for the main sleep per day.
+You can find two datasets in the sub-directory named "data". One is for providing the raw data retrieved from the Fitbit Charge 2 device ("Data.csv"). Each row represents daily abstraced values of features for each subject. There are total of 42 subjects; all subjects are anonymized and userIds are randomly assigned for each subject. The features included in the dataset are as follows. One remark is that for the rows related to the naps, all the sleep-related daily abstract features were assigned as "-1", since those features are calculted soley for the one main sleep per day.
 
 ![](./image/raw.PNG)
 
@@ -28,15 +28,12 @@ corresponding codes since we also use the open sources of t-SNE and various conv
 ##### How to Run
 ```
 1. Setting the path of the model codes in main.ipynb.
-   (i.e., Two model codes "layers.py" and "model.py", constructing the intenal layers of the CAE model and composing the structure of the CAE, respectively, can be set 
-   
-   your parameter.json is located in 'user/Documents/data/parameter.json',you should set it as json_path in 
-    main.py)
-2. python main.py -- After you finish step 1,2 , you can execute main.py and get imputed data.                
+   (i.e., The location of the two model codes "layers.py" and "model.py", constructing the intenal layers of the CAE model and composing the structure of the CAE, respectively, can be set as "models" in main.ipynb)
+2. python main.ipynb -- After you finish the first step, you can execute main.ipynb and get latent variables and the related visualization (see the below example result).
 ``` 
 
 #### Step 1: Preprocessing of Time-Series Data & Step 2: Composing Sequential Images From Data
-By runnung the code, we can convert the consecutive daily data into a image; one image is composed of the 8 consecutive daily vectors with 96 dimensions (8 days x 12 featuers). The imagifying process follows the below figure.
+By runnung the code, we can convert the consecutive daily data into a image; one image is composed of the 8 consecutive daily vectors with 96 dimensions (8 days × 12 featuers). The imagifying process follows the below figure.
 
 ![](./image/preprocessing.jpg)
 
@@ -46,6 +43,9 @@ By runnning the code, it is possible to extract the latent variables of the CAE 
 ![](./image/CAE_structure.jpg)
 
 ##### Example Result
-By running the main.ipynb, 
+By running the main.ipynb, you can visualize the quality of the learning results on the CAE model. The below Figure depicts the 35 input images and 35 reconstructed outputs of one random participant. This visual coherence ensures that the CAE efficiently reduced
+the input size dimensions (ie, 8×12 → 15) by learning the vital latent representations of the data.
 
 ![](./image/CAE_result_example.jpg)
+
+Should you have any questions or comments, please contact us at the following email address below: shaun.park@kaist.ac.kr
