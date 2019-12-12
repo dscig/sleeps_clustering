@@ -3,11 +3,17 @@ Implementation details including codes in Tensorflow and datasets from wearable 
 
 
 ### Data
+#### The raw dataset
 You can find two datasets in the sub-directory named "data". One is for providing the raw data retrieved from the Fitbit Charge 2 device ("Data.csv"). Each row represents daily abstraced values of features for each subject. There are total of 42 subjects; all subjects are anonymized and userIds are randomly assigned for each subject. The features included in the dataset are as follows. One remark is that for the rows related to the naps, all the sleep-related daily abstract features were assigned as "-1", since those features are calculted soley for the one main sleep per day.
 
 ![](./image/raw.PNG)
 
-Another one ("Saved_latent.csv") is for providing the latent variables extracted via Covolutional Autoencoder (CAE). The latent variables were the result of minimizing L2-norm regularized reconstruction loss (L) between the original image (𝑦) and the reconstructed image (𝑦^) for 1,470 images (𝑛 = 1470) on the CAE. The features included in the dataset are as follows.
+#### The latent variables via CAE dataset
+Another one ("Saved_latent.csv") is for providing the latent variables extracted via Covolutional Autoencoder (CAE). The latent variables were the result of minimizing L2-norm regularized reconstruction loss (L) between the original image (𝑦) and the reconstructed image (𝑦^) for 1,470 images (𝑛 = 1470) on the CAE (see the below formular for the loss function).
+
+![](./image/loss_function_CAE.png)
+
+The features included in the dataset are as follows.
 
 ![](./image/LV_CAE.PNG)
 
@@ -47,5 +53,6 @@ By running the main.ipynb, you can visualize the quality of the learning results
 the input size dimensions (ie, 8×12 → 15) by learning the vital latent representations of the data.
 
 ![](./image/CAE_result_example.jpg)
+
 
 Should you have any questions or comments, please contact us at the following email address: shaun.park@kaist.ac.kr
