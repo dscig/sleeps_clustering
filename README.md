@@ -25,7 +25,7 @@ The code has been tested running under Python 3.6.6. with the following packages
 We provide codes from Step 1 to Step 3 on the “Clustering Steps” section at the manuscript. Based on the codes, it is possible to imagify the given original data then to extract latent variables via CAE. For the remaining Step 4 and Step 5, we have not included the
 corresponding codes since we also use the open sources of t-SNE and various conventional clustering methods.
 
-##### How to Run
+#### How to Run
 ```
 1. Setting the path of the model codes in main.ipynb.
    (i.e., The location of the two model codes "/models/layers.py" and "/models/model.py", constructing the intenal layers of the CAE model and composing the structure of the CAE, respectively, can be set as "models" in main.ipynb)
@@ -38,7 +38,7 @@ By runnung the code, we can convert the consecutive daily data into a image; one
 ![](./image/preprocessing.jpg)
 
 #### Step 3: Learning Representations With Reducing Dimensions via Convolutional Autoencoder
-By runnning the code ("main.ipynb"), it is possible to extract the latent variables of the CAE as presented at the dataset "Saved_latent.csv." The interal structure of the CAE is as follows. Based on our learning, the optimal number of the latent variables has been found as 15 (i.e., 15 dimensions).
+By runnning the code ("main.ipynb"), it is possible to extract the latent variables of the CAE as presented at the dataset "Saved_latent.csv." The interal structure of the CAE is as follows. Based on our learning, the optimal number of the latent variables has been found as 15 (i.e., 15 dimensions). In fact, We tested all combinations among 5 hyperparameters (i.e., grid search) and found that the optimal values were 1e^–4 with the AdamOptimizer (optimal learning rate); 0.75 (optimal γ value); 3 (optimal vertical size); 30 (number of convolutional filters); and 15 (number of latent variables), for each of these hyperparameters with the lowest L2-norm regularized reconstruction loss value of 1.09.
 
 ![](./image/CAE_structure.jpg)
 
