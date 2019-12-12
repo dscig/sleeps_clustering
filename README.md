@@ -33,12 +33,12 @@ corresponding codes since we also use the open sources of t-SNE and various conv
 ``` 
 
 #### Step 1: Preprocessing of Time-Series Data & Step 2: Composing Sequential Images From Data
-By runnung the code, we can convert the consecutive daily data into a image; one image is composed of the 8 consecutive daily vectors with 96 dimensions (8 days × 12 featuers). The imagifying process follows the below figure.
+By runnung the code, we can convert the consecutive daily data into a image; one image is composed of the 8 consecutive daily vectors with 96 dimensions (8 days × 12 features). The imagifying process follows the below figure.
 
 ![](./image/preprocessing.jpg)
 
 #### Step 3: Learning Representations With Reducing Dimensions via Convolutional Autoencoder
-By runnning the code, it is possible to extract the latent variables of the CAE as presented at the dataset "Saved_latent.csv." The interal structure of the CAE is as follows. Based on our learning, the optimal number of the latent variables has been found as 15 (i.e., 15 dimensions).
+By runnning the code ("main.ipynb"), it is possible to extract the latent variables of the CAE as presented at the dataset "Saved_latent.csv." The interal structure of the CAE is as follows. Based on our learning, the optimal number of the latent variables has been found as 15 (i.e., 15 dimensions).
 
 ![](./image/CAE_structure.jpg)
 
